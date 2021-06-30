@@ -1,0 +1,7 @@
+@import url("../../variable.css");
+.navbar-footer {
+    content: url('../../images/Group\ 13.svg');
+}
+.nav-footer-2 {
+    bottom: 40px;
+}

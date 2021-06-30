@@ -1,18 +1,9 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { LinkContainer } from "react-router-bootstrap";
-import {
-  Navbar,
-  Nav,
-  Container,
-  NavDropdown,
-  Col,
-  Row,
-  Form,
-} from "react-bootstrap";
+import { Navbar, Nav, Container, NavDropdown, Row } from "react-bootstrap";
 import { logout } from "../../actions/user";
 import "./Header.css";
-
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -27,7 +18,7 @@ const Header = () => {
   return (
     <header>
       <Navbar className="pb-0">
-        <Container fluid>
+        <Container>
           <LinkContainer to="/">
             <Navbar.Brand className="navbar-header"></Navbar.Brand>
           </LinkContainer>
@@ -63,23 +54,23 @@ const Header = () => {
         </Container>
       </Navbar>
       <Navbar className="pt-0">
-      <Container fluid>
+        <Container>
           <LinkContainer to="/">
             <Navbar.Brand></Navbar.Brand>
           </LinkContainer>
           <Navbar.Collapse>
             <Nav className="ml-auto pt-0">
               <Row>
-                  <LinkContainer to="">
-                    <Nav.Link className="">Explore Featured</Nav.Link>
-                  </LinkContainer>
+                <LinkContainer to="">
+                  <Nav.Link className="">Explore Featured</Nav.Link>
+                </LinkContainer>
 
-                  <LinkContainer to="">
-                    <Nav.Link>Special Offers</Nav.Link>
-                  </LinkContainer>
-                  <LinkContainer to="">
-                    <Nav.Link className="listing-btn">Post a Listing</Nav.Link>
-                  </LinkContainer>
+                <LinkContainer to="">
+                  <Nav.Link>Special Offers</Nav.Link>
+                </LinkContainer>
+                <LinkContainer to="">
+                  <Nav.Link className="listing-btn">Post a Listing</Nav.Link>
+                </LinkContainer>
               </Row>
             </Nav>
           </Navbar.Collapse>

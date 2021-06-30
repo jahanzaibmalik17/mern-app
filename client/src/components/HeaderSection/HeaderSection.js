@@ -14,7 +14,7 @@ const HeaderSection = () => {
             your horse.
           </p>
         </Col>
-        <Col lg={7} className="image-section">
+        <Col lg={6} className="image-section">
           <img className="header-image" src={headerImage} alt="test.jpg" />
         </Col>
       </Row>
