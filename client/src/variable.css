@@ -1,0 +1,134 @@
+@font-face {
+    font-family: 'TiemposHeadline-BlackItalic';
+    src: url('./fonts/TiemposHeadline-BlackItalic.woff2') format('woff2'),
+        url('./fonts/TiemposHeadline-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TiemposHeadline-BoldItalic';
+    src: url('./fonts/TiemposHeadline-BoldItalic.woff2') format('woff2'),
+        url('./fonts/TiemposHeadline-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TiemposHeadline-MediumItalic';
+    src: url('./fonts/TiemposHeadline-MediumItalic.woff2') format('woff2'),
+        url('./fonts/TiemposHeadline-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TiemposHeadline-Black';
+    src: url('./fonts/TiemposHeadline-Black.woff2') format('woff2'),
+        url('./fonts/TiemposHeadline-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TiemposHeadline-Regular';
+    src: url('./fonts/TiemposHeadline-Regular.woff2') format('woff2'),
+        url('./fonts/TiemposHeadline-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TiemposHeadline-Bold';
+    src: url('./fonts/TiemposHeadline-Bold.woff2') format('woff2'),
+        url('./fonts/TiemposHeadline-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TiemposHeadline-Light';
+    src: url('./fonts/TiemposHeadline-Light.woff2') format('woff2'),
+        url('./fonts/TiemposHeadline-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TiemposHeadline-LightItalic';
+    src: url('./fonts/TiemposHeadline-LightItalic.woff2') format('woff2'),
+        url('./fonts/TiemposHeadline-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TiemposHeadline-Medium';
+    src: url('./fonts/TiemposHeadline-Medium.woff2') format('woff2'),
+        url('./fonts/TiemposHeadline-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TiemposHeadline-RegularItalic';
+    src: url('./fonts/TiemposHeadline-RegularItalic.woff2') format('woff2'),
+        url('./fonts/TiemposHeadline-RegularItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TiemposHeadline-SemiboldItalic';
+    src: url('./fonts/TiemposHeadline-SemiboldItalic.woff2') format('woff2'),
+        url('./fonts/TiemposHeadline-SemiboldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TiemposHeadline-Semibold';
+    src: url('./fonts/TiemposHeadline-Semibold.woff2') format('woff2'),
+        url('./fonts/TiemposHeadline-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Aktifo-A-Bold';
+    src: url('./fonts/Aktifo-A-Bold.woff2') format('woff2'),
+        url('./fonts/Aktifo-A-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Aktifo-A-Medium';
+    src: url('./fonts/Aktifo-A-Medium.woff2') format('woff2'),
+        url('./fonts/Aktifo-A-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    /*FONT*/
+    --tiempos-headline-regular: "apercuregular";
+    --tiempos-headline-medium: "TiemposHeadline-Medium";
+    --tiempos-headline-bold: "TiemposHeadline-Bold";
+    --aktifo-a-bold: 'Aktifo-A-Bold';
+    --aktifo-a-medium: 'Aktifo-A-Medium';
+  }

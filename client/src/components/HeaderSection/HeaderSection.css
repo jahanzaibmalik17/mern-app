@@ -1,0 +1,26 @@
+@import url("../../variable.css");
+.paragraph {
+    font-size: 48px;
+    line-height: 57px;
+    font-family: var(--tiempos-headline-bold);
+    text-align: left;
+    letter-spacing: 0px;
+    color: #494140;
+}
+.section-p-2 {
+    font-size: 18px;
+    line-height: 26px;
+    font-family: var(--aktifo-a-medium);
+    text-align: left;
+    letter-spacing: 0px;
+    color: #494140;
+}
+.header-image {
+    width: 807px;
+    height: 680px;
+    border-radius: 50px 0px 0px 50px;
+}
+.image-section {
+    background: #FBCB51;
+    border-radius: 97px;
+}

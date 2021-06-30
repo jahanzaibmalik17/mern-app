@@ -1,0 +1,8 @@
+@import url("../../variable.css");
+.navbar-header {
+    content: url('../../images/Component\ 1\ –\ 66.svg');
+}
+.listing-btn {
+    background: #FBCB51;
+    border-radius: 14px;
+}
