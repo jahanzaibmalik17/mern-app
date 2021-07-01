@@ -1,5 +1,5 @@
 @import url("../../variable.css");
-.paragraph {
+h1 {
     font-size: 48px;
     line-height: 57px;
     font-family: var(--tiempos-headline-bold);
@@ -7,7 +7,7 @@
     letter-spacing: 0px;
     color: #494140;
 }
-.section-p-2 {
+p {
     font-size: 18px;
     line-height: 26px;
     font-family: var(--aktifo-a-medium);
@@ -16,12 +16,20 @@
     color: #494140;
 }
 .header-image {
-    width: 807px;
+    width: 100%;
     height: 680px;
     border-radius: 50px 0px 0px 50px;
+    background: url('../../images/brown-horse-pasture-mountains-morning-1.png') no-repeat;
 }
 .image-section {
     left: 200px;
     background: #FBCB51;
     border-radius: 97px;
+}
+.form {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 12px 48px #0000000D;
+    border: 1px solid #49414026;
+    border-radius: 12px;
+    padding: 40px 20px 20px 40px;
 }

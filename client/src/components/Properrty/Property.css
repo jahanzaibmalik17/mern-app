@@ -1,0 +1,30 @@
+.property-comp h1 {
+    font-family: var(--tiempos-headline-bold);
+    font-size: 32px;
+    line-height: 38px;
+    text-align: center;
+    font-weight: 900;
+    letter-spacing: 0px;
+    color: #494140;
+}
+
+.property-comp p {
+    font-size: 18px;
+    line-height: 26px;
+    font-family: var(--aktifo-a-medium);
+    text-align: left;
+    letter-spacing: 0px;
+    color: #494140;
+}
+.property-comp .product-image {
+    width: 265px;
+    height: 150px;
+    border: 1px solid #49414026;
+    border-radius: 12px 12px 0px 0px
+}
+.property-comp .product-card {
+    width: 265px;
+    height: 354px;
+    border: 1px solid #49414026;
+    border-radius: 12px;
+}

@@ -22,7 +22,8 @@ const Header = () => {
           <LinkContainer to="/">
             <Navbar.Brand className="navbar-header"></Navbar.Brand>
           </LinkContainer>
-          <Navbar.Collapse>
+          <Navbar.Toggle aria-controls='responsive-navbar-nav' />
+          <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ml-auto pb-0">
               {userInfo ? (
                 <NavDropdown title={userInfo.name} id="adminmenu">
@@ -58,7 +59,8 @@ const Header = () => {
           <LinkContainer to="/">
             <Navbar.Brand></Navbar.Brand>
           </LinkContainer>
-          <Navbar.Collapse>
+          <Navbar.Toggle aria-controls='responsive-navbar-nav' />
+          <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ml-auto pt-0">
               <Row>
                 <LinkContainer to="">

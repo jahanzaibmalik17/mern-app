@@ -4,13 +4,14 @@ import { Nav, Navbar, Container, Row } from "react-bootstrap";
 import "./Footer.css";
 const HeaderSection = () => {
   return (
-    <>
+    <footer>
       <Navbar className="pb-0">
         <Container>
           <LinkContainer to="/">
             <Navbar.Brand className="navbar-footer"></Navbar.Brand>
           </LinkContainer>
-          <Navbar.Collapse>
+          <Navbar.Toggle aria-controls='responsive-navbar-nav' />
+          <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ml-auto">
               <Row>
                 <LinkContainer to="">
@@ -44,7 +45,7 @@ const HeaderSection = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-    </>
+    </footer>
   );
 };
 
