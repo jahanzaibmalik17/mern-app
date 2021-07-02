@@ -6,7 +6,7 @@ const HomeScreen = () => {
   return (
     <React.Fragment>
       <HeaderSection />
-      {/* <Property /> */}
+      <Property />
     </React.Fragment>
   );
 };

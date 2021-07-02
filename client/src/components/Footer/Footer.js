@@ -1,6 +1,7 @@
 import React from "react";
 import { LinkContainer } from "react-router-bootstrap";
-import { Nav, Navbar, Container, Row } from "react-bootstrap";
+import { Nav, Navbar, Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./Footer.css";
 const HeaderSection = () => {
   return (

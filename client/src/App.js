@@ -12,7 +12,7 @@ const App = () => {
   return (
     <Router>
       <Header />
-      <main className="py-3 header-image">
+      <main className="py-3 header-image" style={{ backgroundPositionX: "right" }}>
         <Container>
           <Route path="/login" component={LoginScreen} />
           <Route path="/register" component={RegisterScreen} />

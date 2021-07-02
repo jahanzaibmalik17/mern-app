@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Col, Row, Form, Button } from "react-bootstrap";
+import { Col, Row, Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./HeaderSection.css";
 const HeaderSection = () => {

@@ -17,7 +17,7 @@ const Header = () => {
 
   return (
     <header>
-      <Navbar className="pb-0">
+      <Navbar className="pb-0" expand="sm">
         <Container>
           <LinkContainer to="/">
             <Navbar.Brand className="navbar-header"></Navbar.Brand>
@@ -54,7 +54,7 @@ const Header = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <Navbar className="pt-0">
+      <Navbar className="pt-0" expand="sm">
         <Container>
           <LinkContainer to="/">
             <Navbar.Brand></Navbar.Brand>

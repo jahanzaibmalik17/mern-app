@@ -1,3 +1,6 @@
+.property-comp {
+    margin-top: 150px !important;
+}
 .property-comp h1 {
     font-family: var(--tiempos-headline-bold);
     font-size: 32px;
@@ -12,9 +15,9 @@
     font-size: 18px;
     line-height: 26px;
     font-family: var(--aktifo-a-medium);
-    text-align: left;
+    text-align: center;
     letter-spacing: 0px;
-    color: #494140;
+    color: #707070;
 }
 .property-comp .product-image {
     width: 265px;
@@ -23,8 +26,47 @@
     border-radius: 12px 12px 0px 0px
 }
 .property-comp .product-card {
-    width: 265px;
-    height: 354px;
+    /* width: 265px;
+    height: 354px; */
     border: 1px solid #49414026;
     border-radius: 12px;
+}
+.property-comp .card-name {
+    text-align: left;
+    font-size: 22px;
+    line-height: 26px;
+    font-family: var(--aktifo-a-bold);
+    letter-spacing: 0px;
+    color: #494140;
+}
+
+.property-comp .card-description {
+    text-align: left;
+    font-size: 16px;
+    line-height: 23px;
+    font-family: var(--aktifo-a-medium);
+    letter-spacing: 0px;
+    color: rgba(73, 65, 64, 0.75);
+}
+
+.property-comp .card-type {
+    text-align: left;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: var(--aktifo-a-medium);
+    letter-spacing: 0px;
+    color: rgba(73, 65, 64, 0.75);
+}
+.property-comp .featured-btn {
+    text-align: left;
+    font-size: 16px;
+    line-height: 19px;
+    font-family: var(--tiempos-headline);
+    letter-spacing: 0px;
+    color: #494140;
+    background: #FBCB51;
+    border-radius: 14px;
+    margin-top: 70px;
+    padding: 12px 15px 12px 15px;
+    border: none;
 }

@@ -16,15 +16,10 @@ p {
     color: #494140;
 }
 .header-image {
-    width: 100%;
-    height: 680px;
-    border-radius: 50px 0px 0px 50px;
+    /* width: 100%;
+    height: 680px; */
+    /* border-radius: 50px 0px 0px 50px; */
     background: url('../../images/brown-horse-pasture-mountains-morning-1.png') no-repeat;
-}
-.image-section {
-    left: 200px;
-    background: #FBCB51;
-    border-radius: 97px;
 }
 .form {
     background: #FFFFFF 0% 0% no-repeat padding-box;
