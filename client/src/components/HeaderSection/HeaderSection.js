@@ -5,7 +5,7 @@ import "./HeaderSection.css";
 const HeaderSection = () => {
   return (
     <React.Fragment>
-      <Row>
+      <Row className="header-section">
         <Col lg={8}>
           <Row>
             {" "}
@@ -18,32 +18,50 @@ const HeaderSection = () => {
             </Col>
           </Row>
           <Form className="form">
-            <Form.Row>
-              <Form.Group as={Col} controlId="formGridEmail">
-                <Form.Label>Location</Form.Label>
-                <Form.Control type="text" placeholder="" />
-              </Form.Group>
-
-              <Form.Group as={Col} controlId="formGridState">
-                <Form.Label>Types of housing</Form.Label>
-                <Form.Control as="select" defaultValue="Choose...">
-                  <option>Stable</option>
-                  <option>Meadow</option>
-                  <option>Paddock Paradise</option>
-                </Form.Control>
-              </Form.Group>
+            <Form.Row className="location">
+              <Col lg={4} md={6} sm={6} xs={12}>
+                <Form.Group
+                  className="location-col"
+                  as={Col}
+                  controlId="formGridEmail"
+                >
+                  <Form.Label>Location</Form.Label>
+                  <Form.Control type="text" placeholder="" />
+                </Form.Group>
+              </Col>
+              <Col lg={4} md={6} sm={6} xs={12}>
+                <Form.Group as={Col} controlId="formGridState">
+                  <Form.Control
+                    as="select"
+                    defaultValue=""
+                    className="housing-type-select"
+                  >
+                    <option>Type of housing</option>
+                    <option>Stable</option>
+                    <option>Meadow</option>
+                    <option>Paddock Paradise</option>
+                  </Form.Control>
+                </Form.Group>
+              </Col>
             </Form.Row>
 
-            <Form.Row>
-              <Form.Group as={Col} controlId="formGridAddress1">
-                <Form.Label>Keyword</Form.Label>
-                <Form.Control placeholder="" />
-              </Form.Group>
-
-              <Form.Group as={Col} controlId="formBasicRangeCustom">
-                <Form.Label>Radius</Form.Label>
-                <Form.Control type="range" custom />
-              </Form.Group>
+            <Form.Row className="keyword">
+              <Col lg={4}>
+                <Form.Group
+                  className="keyword-col"
+                  as={Col}
+                  controlId="formGridAddress1"
+                >
+                  <Form.Label>Keyword</Form.Label>
+                  <Form.Control placeholder="" />
+                </Form.Group>
+              </Col>
+              <Col lg={8}>
+                <Form.Group as={Col} controlId="formBasicRangeCustom">
+                  <Form.Label>Radius</Form.Label>
+                  <Form.Control type="range" custom />
+                </Form.Group>
+              </Col>
             </Form.Row>
 
             <Form.Row>
@@ -54,8 +72,10 @@ const HeaderSection = () => {
                   label="Vacancy Only"
                 />
               </Form.Group>
-              <Link to="/" className="px-4 py-2">Advance Search</Link>
-              <Button size="sm" variant="warning">
+              <Link to="/" className="px-4 py-2" id="advance-search-btn">
+                Advance Search
+              </Link>
+              <Button size="sm" variant="warning" id="search-btn">
                 Search
               </Button>
             </Form.Row>

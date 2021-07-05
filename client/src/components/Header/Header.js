@@ -22,8 +22,11 @@ const Header = () => {
           <LinkContainer to="/">
             <Navbar.Brand className="navbar-header"></Navbar.Brand>
           </LinkContainer>
-          <Navbar.Toggle aria-controls='responsive-navbar-nav' />
-          <Navbar.Collapse id="responsive-navbar-nav">
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse
+            id="responsive-navbar-nav"
+            className="flex-md-column"
+          >
             <Nav className="ml-auto pb-0">
               {userInfo ? (
                 <NavDropdown title={userInfo.name} id="adminmenu">
@@ -51,29 +54,16 @@ const Header = () => {
                 </React.Fragment>
               )}
             </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-      <Navbar className="pt-0" expand="sm">
-        <Container>
-          <LinkContainer to="/">
-            <Navbar.Brand></Navbar.Brand>
-          </LinkContainer>
-          <Navbar.Toggle aria-controls='responsive-navbar-nav' />
-          <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ml-auto pt-0">
-              <Row>
-                <LinkContainer to="">
-                  <Nav.Link className="">Explore Featured</Nav.Link>
-                </LinkContainer>
-
-                <LinkContainer to="">
-                  <Nav.Link>Special Offers</Nav.Link>
-                </LinkContainer>
-                <LinkContainer to="">
-                  <Nav.Link className="listing-btn">Post a Listing</Nav.Link>
-                </LinkContainer>
-              </Row>
+              <LinkContainer to="">
+                <Nav.Link className="">Explore Featured</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="">
+                <Nav.Link>Special Offers</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="">
+                <Nav.Link className="listing-btn">Post a Listing</Nav.Link>
+              </LinkContainer>
             </Nav>
           </Navbar.Collapse>
         </Container>

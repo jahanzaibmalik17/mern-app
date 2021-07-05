@@ -13,7 +13,7 @@ const Property = () => {
         your horse.
       </p>
       <Row>
-        <Col lg={3} md={3} sm={12} xs= {12}>
+        <Col lg={3} md={6} sm={12} xs= {12}>
           <Card className="product-card">
             <Link>
               <Image
@@ -41,7 +41,7 @@ const Property = () => {
           </Card>
         </Col>
 
-        <Col lg={3} md={3} sm={12} xs= {12}>
+        <Col lg={3} md={6} sm={12} xs= {12}>
           <Card className="product-card">
             <Link>
               <Image
@@ -69,7 +69,7 @@ const Property = () => {
           </Card>
         </Col>
 
-        <Col lg={3} md={3} sm={12} xs= {12}>
+        <Col lg={3} md={6} sm={12} xs= {12}>
           <Card className="product-card">
             <Link>
               <Image
@@ -97,7 +97,7 @@ const Property = () => {
           </Card>
         </Col>
 
-        <Col lg={3} md={3} sm={12} xs= {12}>
+        <Col lg={3} md={6} sm={12} xs= {12}>
           <Card className="product-card">
             <Link>
               <Image
