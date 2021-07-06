@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Row, Card, Col, Image, Button, Container } from "react-bootstrap";
 import productImage from "../../images/brown-horse-pasture-mountains-morning-1@2x.png";
-import "./Listing.css";
-const Listing = () => {
+import "./FeaturedListing.css";
+const Property = () => {
   return (
     <Container fluid>
-      <Col className="listing-comp pt-5">
-        <h1>Find Spaces that suit your horse</h1>
+      <Col className="featured-listing-comp pt-5">
+        <h1>Featured Listings</h1>
         <p>
           Our unique algorithm helps you find the best natural environment for
           your horse.
@@ -123,14 +123,16 @@ const Listing = () => {
                 <Card.Text as="div"></Card.Text>
               </Card.Body>
             </Card>
-          </Col> 
+          </Col>
         </Row>
         <Col className="text-center">
-          {/* <Button type="button" className="featured-btn">Explore all featured</Button> */}
+          <Button type="button" className="featured-btn">
+            Explore all featured
+          </Button>
         </Col>
       </Col>
     </Container>
   );
 };
 
-export default Listing;
+export default Property;

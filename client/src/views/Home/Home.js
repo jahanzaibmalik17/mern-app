@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import HeaderSection from "../../components/HeaderSection/HeaderSection";
-import Property from "../../components/Properrty/Property";
+import FeaturedListing from "../../components/Featured/FeaturedListing";
+import Listing from "../../components/Listing/Listing";
 
 const HomeScreen = () => {
+
   return (
     <React.Fragment>
-      <HeaderSection />
-      <Property />
+      <HeaderSection  />
+      <FeaturedListing />
+      <Listing />
     </React.Fragment>
   );
 };

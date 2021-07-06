@@ -30,9 +30,9 @@ const Header = () => {
             <Nav className="ml-auto pb-0">
               {userInfo ? (
                 <NavDropdown title={userInfo.name} id="adminmenu">
-                  <LinkContainer to="/user/listing">
+                  {/* <LinkContainer to="/user/listing">
                     <NavDropdown.Item>Add Listing</NavDropdown.Item>
-                  </LinkContainer>
+                  </LinkContainer> */}
 
                   <NavDropdown.Item onClick={logoutHandler}>
                     Logout
@@ -40,7 +40,7 @@ const Header = () => {
                 </NavDropdown>
               ) : (
                 <React.Fragment>
-                  <LinkContainer to="/login">
+                  <LinkContainer to="/register">
                     <Nav.Link>
                       <i className="fas fa-plus"></i> Create Account
                     </Nav.Link>
@@ -61,7 +61,7 @@ const Header = () => {
               <LinkContainer to="">
                 <Nav.Link>Special Offers</Nav.Link>
               </LinkContainer>
-              <LinkContainer to="">
+              <LinkContainer to="/user/listing">
                 <Nav.Link className="listing-btn">Post a Listing</Nav.Link>
               </LinkContainer>
             </Nav>

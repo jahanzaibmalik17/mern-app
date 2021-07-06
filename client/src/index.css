@@ -11,3 +11,55 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.listing-form h1, .login-form h1, .register-form h1 {
+  font-family: var(--tiempos-headline-bold);
+  font-size: 32px;
+  line-height: 38px;
+  text-align: center;
+  font-weight: 900;
+  letter-spacing: 0px;
+  color: #494140;
+}
+
+.listing-form , .login-form , .register-form .form-label {
+  text-align: left;
+  font-size: 16px;
+  line-height: 23px;
+  font-family: var(--aktifo-a-medium);
+  letter-spacing: 0px;
+  color: #494140;
+}
+
+.listing-form #add-listing-btn, .login-form #login-btn, .register-form #register-btn {
+  text-align: right;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: var(--aktifo-a-medium);
+  letter-spacing: 0px;
+  color: #494140;
+  background: #FBCB51;
+  border-radius: 14px;
+  border: #FBCB51;
+}
+
+#register-btn-link, #login-btn-link {
+  text-align: right;
+  text-decoration: underline;
+  font-size: 16px;
+  line-height: 23px;
+  font-family: var(--aktifo-a-medium);
+  letter-spacing: 0px;
+  color: #FBCB51;
+}
+
+
+.login-form h1 {
+  font-family: var(--tiempos-headline-bold);
+  font-size: 32px;
+  line-height: 38px;
+  text-align: center;
+  font-weight: 900;
+  letter-spacing: 0px;
+  color: #494140;
+}

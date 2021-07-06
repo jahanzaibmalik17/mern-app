@@ -1,12 +1,16 @@
 import React from "react";
-import { Col, Row, Form, Button } from "react-bootstrap";
+import { Col, Row, Form, Button, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./HeaderSection.css";
+import headerImage from '../../images/brown-horse-pasture-mountains-morning-1 (1).png'
 const HeaderSection = () => {
   return (
     <React.Fragment>
       <Row className="header-section">
         <Col lg={8}>
+          <Col className="header-image">
+              {/* <Image src={headerImage}  /> */}
+          </Col>
           <Row>
             {" "}
             <Col lg={6}>

@@ -4,9 +4,8 @@ const routes = require("./routes/index");
 const mongoose = require("mongoose");
 const path = require('path');
 // DB Connection
-console.log('mongodb://localhost/horse-housing', process.env.MONGO_URI)
 mongoose
-  .connect('mongodb://localhost/horse-housing', { useNewUrlParser: true })
+  .connect('mongodb://localhost/horse-housing', { useNewUrlParser: true , useUnifiedTopology: true, useCreateIndex: true,})
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.log(err.message));
 
