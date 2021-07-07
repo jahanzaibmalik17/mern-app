@@ -15,30 +15,34 @@ const productSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    housingType: {
+      type: String,
+      required: true,
+    },
     description: {
       type: String,
       required: true,
     },
-    lat: {
-      type: Number,
-      required: true,
-      default: 0,
-    },
-    lan: {
-      type: Number,
-      required: true,
-      default: 0,
-    },
-    zip: {
-      type: Number,
-      required: true,
-      default: 0,
-    },
-    isFavorite: {
-      type: Boolean,
-      required: false,
-      default: false,
-    },
+    // lat: {
+    //   type: Number,
+    //   required: true,
+    //   default: 0,
+    // },
+    // lan: {
+    //   type: Number,
+    //   required: true,
+    //   default: 0,
+    // },
+    // zip: {
+    //   type: Number,
+    //   required: true,
+    //   default: 0,
+    // },
+    // isFavorite: {
+    //   type: Boolean,
+    //   required: false,
+    //   default: false,
+    // },
   },
   {
     timestamps: true,
@@ -47,4 +51,4 @@ const productSchema = mongoose.Schema(
 
 const Product = mongoose.model('Product', productSchema)
 
-export default Product
+module.exports = Product;

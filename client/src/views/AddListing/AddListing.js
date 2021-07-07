@@ -8,22 +8,22 @@ import { useDispatch, useSelector } from "react-redux";
 // import FormContainer from '../components/FormContainer'
 import { createProduct } from "../../actions/listing";
 import { PRODUCT_CREATE_RESET } from "../../constants/productConstants";
-import './AddListing.css'
+import "./AddListing.css";
 
 const AddListingScreen = ({ match, history }) => {
   const [name, setName] = useState("");
-  const [housingType, setHousingType] = useState(0);
-  const [image, setImage] = useState("");
+  const [housingType, setHousingType] = useState("stable");
+  const [imagesArray, setImagesArray] = useState("");
   const [description, setDescription] = useState("");
   // const [uploading, setUploading] = useState(false)
-
+  console.log("imagesArray", imagesArray);
   const dispatch = useDispatch();
 
   const userInfo = useSelector((state) => state.userLogin.userInfo);
-  if(!userInfo) {
+  if (!userInfo) {
     history.push("/login");
   }
-  console.log('userInfo', userInfo)
+  console.log("userInfo", userInfo);
 
   // const productDetails = useSelector((state) => state.productDetails);
   // const {  product } = productDetails;
@@ -55,11 +55,14 @@ const AddListingScreen = ({ match, history }) => {
   };
 
   const uploadFileHandler = async (e) => {
-    const file = e.target.files[0];
+    const files = e.target.files;
+    const newArr = [];
     const formData = new FormData();
-    formData.append("image", file);
+    for (let i = 0; i < files.length; i++) {
+      newArr.push(files[i])
+    }
+    formData.append(`imagesArray`, newArr);
     // setUploading(true)
-
     try {
       const config = {
         headers: {
@@ -69,8 +72,8 @@ const AddListingScreen = ({ match, history }) => {
 
       const { data } = await axios.post("/api/upload", formData, config);
 
-      setImage(data);
-      // setUploading(false)
+      setImagesArray(data);
+      //setUploading(false)
     } catch (error) {
       console.error(error);
       // setUploading(false)
@@ -83,7 +86,7 @@ const AddListingScreen = ({ match, history }) => {
       createProduct({
         name,
         housingType,
-        image,
+        imagesArray,
         description,
       })
     );
@@ -108,21 +111,30 @@ const AddListingScreen = ({ match, history }) => {
 
               <Form.Group controlId="housingType">
                 <Form.Label>Type of housing</Form.Label>
-                <Form.Control as="select">
-                  <option>Stable</option>
-                  <option>Meadow</option>
-                  <option>Paddock Paradise</option>
+                <Form.Control onChange={handleHousingType} as="select">
+                  <option value="stable">Stable</option>
+                  <option value="meadow">Meadow</option>
+                  <option value="paddockParadise">Paddock Paradise</option>
                 </Form.Control>
               </Form.Group>
 
-              <Form.Group controlId="image">
+              <Form.Group controlId="imagesArray">
                 <Form.Label>Image</Form.Label>
                 <Form.File
                   id="image-file"
                   label="Choose File"
                   custom
                   onChange={uploadFileHandler}
+                  multiple
                 ></Form.File>
+                {/* <Form.Control
+                  type="file"
+                  id="image-file"
+                  label="Choose File"
+                  custom
+                  onChange={uploadFileHandler}
+                  multiple
+                ></Form.Control> */}
               </Form.Group>
 
               <Form.Group controlId="description">

@@ -9,14 +9,12 @@ import RegisterScreen  from "./views/Register/Register";
 import AddListing  from "./views/AddListing/AddListing";
 
 const App = () => {
-  const [headerImageClass, setHeaderImageClass] = useState('')
-  if(window.location.href === "http://localhost:8000/") {
-    //setHeaderImageClass('header-image')
-  }
+  const [headerImageClass, setHeaderImageClass] = useState('');
+
   return (
     <Router>
-      <Header />
-      <main className={`py-3 ${headerImageClass}`} style={{ backgroundPositionX: "right" }}>
+      <Header setHeaderImageClass={headerImageClass} />
+      <main className={`py-3 header-image`} style={{ backgroundPositionX: "right" , backgroundSize: '900px'}}>
         <Container>
           <Route path="/login" component={LoginScreen} />
           <Route path="/register" component={RegisterScreen} />

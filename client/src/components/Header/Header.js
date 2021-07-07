@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { LinkContainer } from "react-router-bootstrap";
 import { Navbar, Nav, Container, NavDropdown, Row } from "react-bootstrap";
 import { logout } from "../../actions/user";
 import "./Header.css";
 
-const Header = () => {
+
+const Header = (params) => {
   const dispatch = useDispatch();
 
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
+
+  // useEffect(() => {
+  //   params.setHeaderImageClass = '';
+  // });
 
   const logoutHandler = () => {
     dispatch(logout());

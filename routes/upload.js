@@ -1,6 +1,6 @@
-import path from 'path'
-import express from 'express'
-import multer from 'multer'
+const path = require('path');
+const express = require('express')
+const multer = require('multer');
 const router = express.Router()
 
 const storage = multer.diskStorage({
@@ -34,15 +34,13 @@ const upload = multer({
   },
 })
 
-router.post('/', upload.array('image', 6), (req, res) => {
+router.post("/", upload.array("imagesArray", 8), (req, res) => {
+  const reqFiles = [];
+console.log('req', req.imagesArray)
+  // for (var i = 0; i < req.files.length; i++) {
+  //   reqFiles.push(`/${req.file.path}`);
+  // }
+  // res.send(`/${req.file.path}`)
+});
 
-    const reqFiles = [];
-    const url = req.protocol + '://' + req.get('host')
-    for (var i = 0; i < req.files.length; i++) {
-        reqFiles.push(url + '/uploads/' + req.files[i].filename)
-    }
-
-  res.send({reqFiles})
-})
-
-export default router
+module.exports = router;

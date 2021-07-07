@@ -2,11 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Form, Button, Row, Col, Container } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-// import Message from '../components/Message'
-// import Loader from '../components/Loader'
-// import FormContainer from '../components/FormContainer'
+import Message from "../../components/Message/Message";
+import Loader from "../../components/Loader/Loader";
 import { login } from "../../actions/user";
-import './Login.css';
+import "./Login.css";
 
 const LoginScreen = ({ location, history }) => {
   const [email, setEmail] = useState("");
@@ -35,8 +34,8 @@ const LoginScreen = ({ location, history }) => {
       <Row className="justify-content-md-center login-form">
         <Col xs={12} md={6}>
           <h1>Sign In</h1>
-          {/* {error && <Message variant='danger'>{error}</Message>}
-      {loading && <Loader />} */}
+          {error && <Message variant="danger">{error}</Message>}
+          {loading && <Loader />}
           <Form onSubmit={submitHandler}>
             <Form.Group controlId="email">
               <Form.Label>Email Address</Form.Label>
@@ -67,7 +66,8 @@ const LoginScreen = ({ location, history }) => {
             <Col>
               New Customer?{" "}
               <Link
-                to={redirect ? `/register?redirect=${redirect}` : "/register"} id="register-btn-link"
+                to={redirect ? `/register?redirect=${redirect}` : "/register"}
+                id="register-btn-link"
               >
                 Register
               </Link>

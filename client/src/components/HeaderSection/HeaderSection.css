@@ -72,6 +72,7 @@ form .form-control:focus{
   .housing-type-select {
       appearance: auto !important;
       -webkit-appearance: auto;
+      padding-left: 0px;
   }
 
   .custom-range {
