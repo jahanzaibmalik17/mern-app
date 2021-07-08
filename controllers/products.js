@@ -6,7 +6,7 @@ module.exports.add = async (req, res) => {
       name: req.body.product.name,
       user: req.user._id,
       housingType: req.body.product.housingType,
-      image: req.body.product.image,
+      imagesArray: req.body.product.imagesArray,
       description: req.body.product.description,
     });
     const createdProduct = await product.save();

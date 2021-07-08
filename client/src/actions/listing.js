@@ -31,7 +31,7 @@ export const listProducts = (keyword = '', pageNumber = '') => async (
     dispatch({ type: PRODUCT_LIST_REQUEST })
 
     const { data } = await axios.get(
-      `/api/products?keyword=${keyword}&pageNumber=${pageNumber}`
+      `/api/product?keyword=${keyword}&pageNumber=${pageNumber}`
     )
 
     dispatch({
@@ -108,27 +108,26 @@ export const deleteProduct = (id) => async (dispatch, getState) => {
 
 export const createProduct = (product) => async (dispatch, getState) => {
   try {
-    console.log('product', JSON.stringify(product))
-    // dispatch({
-    //   type: PRODUCT_CREATE_REQUEST,
-    // })
+    dispatch({
+      type: PRODUCT_CREATE_REQUEST,
+    })
 
-    // const {
-    //   userLogin: { userInfo },
-    // } = getState()
+    const {
+      userLogin: { userInfo },
+    } = getState()
 
-    // const config = {
-    //   headers: {
-    //     Authorization: `Bearer ${userInfo.token}`,
-    //   },
-    // }
+    const config = {
+      headers: {
+        Authorization: `Bearer ${userInfo.token}`,
+      },
+    }
 
-    // const { data } = await axios.post(`/api/product`, { product }, config)
+    const { data } = await axios.post(`/api/product`, { product }, config)
 
-    // dispatch({
-    //   type: PRODUCT_CREATE_SUCCESS,
-    //   payload: data,
-    // })
+    dispatch({
+      type: PRODUCT_CREATE_SUCCESS,
+      payload: data,
+    })
   } catch (error) {
     const message =
       error.response && error.response.data.message

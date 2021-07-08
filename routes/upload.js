@@ -34,13 +34,12 @@ const upload = multer({
   },
 })
 
-router.post("/", upload.array("imagesArray", 8), (req, res) => {
+router.post("/", upload.array("imagesArray", 3), (req, res) => {
   const reqFiles = [];
-console.log('req', req.imagesArray)
-  // for (var i = 0; i < req.files.length; i++) {
-  //   reqFiles.push(`/${req.file.path}`);
-  // }
-  // res.send(`/${req.file.path}`)
+  for (var i = 0; i < req.files.length; i++) {
+    reqFiles.push(`/${req.files[i].path}`);
+  }
+  res.send(reqFiles)
 });
 
 module.exports = router;

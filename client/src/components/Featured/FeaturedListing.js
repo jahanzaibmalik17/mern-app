@@ -1,9 +1,21 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from "react-router-dom";
 import { Row, Card, Col, Image, Button, Container } from "react-bootstrap";
 import productImage from "../../images/brown-horse-pasture-mountains-morning-1@2x.png";
+import { listProducts } from '../../actions/listing'
 import "./FeaturedListing.css";
 const Property = () => {
+  const dispatch = useDispatch()
+
+  const productList = useSelector((state) => state.productList)
+  console.log('productList', productList)
+  // const {  products } = productList
+
+  useEffect(() => {
+    dispatch(listProducts())
+  }, [dispatch])
+
   return (
     <Container fluid>
       <Col className="featured-listing-comp pt-5">
