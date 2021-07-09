@@ -12,10 +12,6 @@ const Header = (params) => {
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
-  // useEffect(() => {
-  //   params.setHeaderImageClass = '';
-  // });
-
   const logoutHandler = () => {
     dispatch(logout());
   };
@@ -35,10 +31,9 @@ const Header = (params) => {
             <Nav className="ml-auto pb-0">
               {userInfo ? (
                 <NavDropdown title={userInfo.name} id="adminmenu">
-                  {/* <LinkContainer to="/user/listing">
-                    <NavDropdown.Item>Add Listing</NavDropdown.Item>
-                  </LinkContainer> */}
-
+                  <LinkContainer to="/admin/listing">
+                    <NavDropdown.Item>Listing</NavDropdown.Item>
+                  </LinkContainer>
                   <NavDropdown.Item onClick={logoutHandler}>
                     Logout
                   </NavDropdown.Item>
@@ -66,7 +61,7 @@ const Header = (params) => {
               <LinkContainer to="">
                 <Nav.Link>Special Offers</Nav.Link>
               </LinkContainer>
-              <LinkContainer to="/user/listing">
+              <LinkContainer to="/admin/addlisting">
                 <Nav.Link className="listing-btn">Post a Listing</Nav.Link>
               </LinkContainer>
             </Nav>

@@ -7,6 +7,7 @@ import HomeScreen from "./views/Home/Home";
 import LoginScreen from "./views/Login/Login";
 import RegisterScreen  from "./views/Register/Register";
 import AddListing  from "./views/AddListing/AddListing";
+import ViewListing  from "./views/ViewListing/ViewListing";
 
 const App = () => {
   const [headerImageClass, setHeaderImageClass] = useState('');
@@ -18,7 +19,9 @@ const App = () => {
         <Container>
           <Route path="/login" component={LoginScreen} />
           <Route path="/register" component={RegisterScreen} />
-          <Route path="/user/listing" component={AddListing} />
+          <Route path="/admin/addlisting" component={AddListing} />
+          <Route path="/admin/listing" component={ViewListing} />
+          <Route path='/admin/addlisting/:id/edit' component={AddListing} />
           <Route path="/" component={HomeScreen} exact />
         </Container>
       </main>

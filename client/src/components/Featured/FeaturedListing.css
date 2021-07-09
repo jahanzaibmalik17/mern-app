@@ -21,7 +21,7 @@
 }
 .featured-listing-comp .product-image {
     width: 100%;
-    height: 100%;
+    height: 150px;
     border: 1px solid #49414026;
     border-radius: 12px 12px 0px 0px
 }
@@ -29,6 +29,7 @@
     margin: 5px;
     border: 1px solid #49414026;
     border-radius: 12px;
+    height: 354px;
 }
 .featured-listing-comp .card-name {
     text-align: left;

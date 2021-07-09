@@ -23,16 +23,15 @@ const AddListingScreen = ({ match, history }) => {
     history.push("/login");
   }
 
-  // const productDetails = useSelector((state) => state.productDetails);
-  // console.log('productDetails', productDetails)
-  // const { loading, error, product } = productDetails;
-  // const productCreate = useSelector((state) => state.productCreate);
-  // const {
-  //   loading: loadingCreate,
-  //   error: errorCreate,
-  //   success: successCreate,
-  //   product: createdProduct,
-  // } = productCreate;
+  const productDetails = useSelector((state) => state.productDetails);
+  const { loading, error, product } = productDetails;
+  const productCreate = useSelector((state) => state.productCreate);
+  const {
+    loading: loadingCreate,
+    error: errorCreate,
+    success: successCreate,
+    product: createdProduct,
+  } = productCreate;
 
   // useEffect(() => {
   //   if (successCreate) {
@@ -40,7 +39,7 @@ const AddListingScreen = ({ match, history }) => {
   //     history.push("/");
   //   } else {
   //     setName(product.name);
-  //     setHousingType(product.housingType);
+  //     setHousingType(product.housingType || 'stable');
   //     setImagesArray(product.imagesArray);
   //     setDescription(product.description);
   //   }
@@ -92,13 +91,13 @@ const AddListingScreen = ({ match, history }) => {
         <Row className="justify-content-md-center listing-form">
           <Col xs={12} md={6}>
             <h1>Add Listing</h1>
-            {/* {loadingCreate && <Loader />}
+            {loadingCreate && <Loader />}
             {errorCreate && <Message variant="danger">{errorCreate}</Message>}
             {loading ? (
               <Loader />
             ) : error ? (
               <Message variant="danger">{error}</Message>
-            ) : ( */}
+            ) : (
               <Form onSubmit={submitHandler}>
                 <Form.Group controlId="name">
                   <Form.Label>Name</Form.Label>
@@ -113,6 +112,7 @@ const AddListingScreen = ({ match, history }) => {
                 <Form.Group controlId="housingType">
                   <Form.Label>Type of housing</Form.Label>
                   <Form.Control onChange={handleHousingType} as="select">
+                    {/* <option></option> */}
                     <option value="stable">Stable</option>
                     <option value="meadow">Meadow</option>
                     <option value="paddockParadise">Paddock Paradise</option>
@@ -128,14 +128,6 @@ const AddListingScreen = ({ match, history }) => {
                     onChange={uploadFileHandler}
                     multiple
                   ></Form.File>
-                  {/* <Form.Control
-                  type="file"
-                  id="image-file"
-                  label="Choose File"
-                  custom
-                  onChange={uploadFileHandler}
-                  multiple
-                ></Form.Control> */}
                 </Form.Group>
 
                 <Form.Group controlId="description">
@@ -152,7 +144,7 @@ const AddListingScreen = ({ match, history }) => {
                   Add
                 </Button>
               </Form>
-            {/* )} */}
+            )}
           </Col>
         </Row>
       </Container>
