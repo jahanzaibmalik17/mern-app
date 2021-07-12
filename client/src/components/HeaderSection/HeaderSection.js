@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from 'react';
 import { Col, Row, Form, Button, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./HeaderSection.css";
-import headerImage from '../../images/brown-horse-pasture-mountains-morning-1 (1).png'
+import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
+import RangeSlider from 'react-bootstrap-range-slider';
 const HeaderSection = () => {
+  const [ value, setValue ] = useState(0); 
   return (
     <React.Fragment>
       <Row className="header-section">
@@ -62,8 +64,18 @@ const HeaderSection = () => {
               </Col>
               <Col lg={8}>
                 <Form.Group as={Col} controlId="formBasicRangeCustom">
-                  <Form.Label>Radius</Form.Label>
-                  <Form.Control type="range" custom />
+                <Form.Label>Radius</Form.Label>
+                <RangeSlider
+                  value={value}
+                  onChange={changeEvent => setValue(changeEvent.target.value)}
+                  tooltipPlacement = 'top'
+                  variant = 'warning'
+                  // inputProps = {
+                  //   background: ''
+                  // }
+                />
+                  {/* <Form.Label>Radius</Form.Label>
+                  <Form.Control type="range" custom  value={value} onChange={changeEvent => setValue(changeEvent.target.value)}/> */}
                 </Form.Group>
               </Col>
             </Form.Row>

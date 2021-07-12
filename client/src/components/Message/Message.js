@@ -1,12 +1,20 @@
-import React from 'react'
-import { Alert } from 'react-bootstrap'
+import React, { useState, useEffect } from "react";
+import { Alert } from "react-bootstrap";
 
 const Message = ({ variant, children }) => {
-  return <Alert variant={variant}>{children}</Alert>
-}
+  const [visibleAlert, setVisibleAlert] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setVisibleAlert(false);
+    }, 3000);
+  });
+
+  return visibleAlert && <Alert variant={variant}>{children}</Alert>;
+};
 
 Message.defaultProps = {
-  variant: 'info',
-}
+  variant: "info",
+};
 
-export default Message
+export default Message;

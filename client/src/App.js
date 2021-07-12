@@ -23,6 +23,7 @@ const App = () => {
           <Route path="/admin/listing" component={ViewListing} />
           <Route path='/admin/addlisting/:id/edit' component={AddListing} />
           <Route path="/" component={HomeScreen} exact />
+          <Route path='/page/:pageNumber' component={HomeScreen} exact />
         </Container>
       </main>
       <Footer />

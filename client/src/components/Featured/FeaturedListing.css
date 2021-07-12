@@ -30,6 +30,7 @@
     border: 1px solid #49414026;
     border-radius: 12px;
     height: 354px;
+    width: 255px;
 }
 .featured-listing-comp .card-name {
     text-align: left;

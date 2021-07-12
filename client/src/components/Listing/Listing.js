@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Row, Card, Col, Image, Container } from "react-bootstrap";
 import "./Listing.css";
-
-const Listing = ({ products }) => {
+import Paginate from '../../components/Paginate/Paginate';
+const Listing = ({ products, pages, page }) => {
   return (
     <Container fluid>
       <Col className="listing-comp pt-5">
@@ -47,8 +47,8 @@ const Listing = ({ products }) => {
               </Col>
             ))}
         </Row>
-        <Col className="text-center">
-         
+        <Col className="text-center pagination-wrapper">
+          <Paginate pages={pages} page={page} />
         </Col>
       </Col>
     </Container>

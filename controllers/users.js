@@ -16,7 +16,7 @@ module.exports.login = asyncHandler(async (req, res) => {
       token: generateToken(user._id),
     });
   } else {
-    res.status(401);
+    res.status(401).send({ message: "Invalid email or password" });
     throw new Error("Invalid email or password");
   }
 });
@@ -27,7 +27,7 @@ module.exports.register = asyncHandler(async (req, res) => {
   const userExists = await User.findOne({ email });
 
   if (userExists) {
-    res.status(400);
+    res.status(400).send({ message: "User already exists" });
     throw new Error("User already exists");
   }
 
@@ -46,7 +46,7 @@ module.exports.register = asyncHandler(async (req, res) => {
       token: generateToken(user._id),
     });
   } else {
-    res.status(400);
+    res.status(400).send({ message: "Invalid user data" });
     throw new Error("Invalid user data");
   }
 });
