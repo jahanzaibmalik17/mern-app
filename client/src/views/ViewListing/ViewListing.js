@@ -90,7 +90,7 @@ const ProductListScreen = ({ history, match }) => {
                   <td>{product.housingType}</td>
                   <td>{product.description}</td>
                   <td>
-                    <LinkContainer to={`/admin/addlisting/${product._id}/edit`}>
+                    <LinkContainer to={`/admin/listing/${product._id}/edit`}>
                       <Button variant="light" className="btn-sm">
                         <i className="fas fa-edit"></i>
                       </Button>

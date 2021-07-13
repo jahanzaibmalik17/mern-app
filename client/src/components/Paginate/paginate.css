@@ -1,0 +1,40 @@
+
+.page-item.active .page-link {
+    text-align: left;
+    font-size: 16px;
+    line-height: 23px;
+    font-family: var(--aktifo-a-medium);
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    background: #FBCB51;
+    border-color: #FBCB51;
+    border-radius: 50%;
+}
+.page-link {
+    display: inline;
+    border: none;
+    font-size: 16px;
+    line-height: 23px;
+    font-family: var(--aktifo-a-medium);
+    letter-spacing: 0px;
+    color: #494140;
+}
+.page-link:hover {
+    color: #494140;
+    background-color: transparent;
+    border-color: transparent;
+}
+.pagination {
+    margin-top: 60px;
+    justify-content: center;
+}
+
+.page-link .fa-angle-left{
+    background: none;
+}
+li.mr-2.angle-left.page-item.active .page-link , li.angle-right.page-item.active .page-link {
+    /* background: none; */
+    color: rgba(73, 65, 64, 0.5);
+    background: #FFFFFF;
+    border: 1px solid rgba(73, 65, 64, 0.5);
+}

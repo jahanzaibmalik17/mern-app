@@ -8,6 +8,12 @@ module.exports.add = async (req, res) => {
       housingType: req.body.product.housingType,
       imagesArray: req.body.product.imagesArray,
       description: req.body.product.description,
+      location: req.body.location,
+      radius: req.body.radius,
+      keyword: req.body.keyword,
+      phone: req.body.phone,
+      email: req.body.email,
+      website: req.body.website,
     });
     const createdProduct = await product.save();
     res.status(201).json(createdProduct);
@@ -32,8 +38,8 @@ module.exports.getAll = async (req, res) => {
 
 module.exports.getOne = async (req, res) => {
   try {
-    const products = await Product.findById(req.params.id);
-    res.json({ products });
+    const product = await Product.findById(req.params.id);
+    res.json(product);
   } catch (error) {
     console.log("controller:products:getOne", error);
   }
@@ -41,21 +47,21 @@ module.exports.getOne = async (req, res) => {
 
 module.exports.update = async (req, res) => {
   try {
-    const { name, price, description, image, lat, lan, zip } = req.body;
+    const { name, housingType, description, imagesArray } = req.body;
 
     const product = await Product.findById(req.params.id);
 
     if (product) {
       product.name = name;
-      product.price = price;
+      product.housingType = housingType;
       product.description = description;
-      product.image = image;
-      product.brand = brand;
-      product.category = category;
-      product.countInStock = countInStock;
-      product.lat = lat;
-      product.lan = lan;
-      product.zip = zip;
+      product.imagesArray = imagesArray;
+      product.location = location;
+      product.radius = radius;
+      product.keyword = keyword;
+      product.phone = phone;
+      product.email = email;
+      product.website = website;
       const updatedProduct = await product.save();
       res.json(updatedProduct);
     }
