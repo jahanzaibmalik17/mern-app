@@ -9,14 +9,23 @@ import RegisterScreen  from "./views/Register/Register";
 import AddListing  from "./views/AddListing/AddListing";
 import ViewListing  from "./views/ViewListing/ViewListing";
 import EditListing  from "./views/EditListing/EditListing";
+import AdvanceListing  from "./views/AdvanceListing/AdvanceListing";
 
 const App = () => {
   const [headerImageClass, setHeaderImageClass] = useState('');
 
+  // useEffect(() => {
+  //   if(window.location.pathname === '/' || window.location.pathname === '') {
+  //     setHeaderImageClass('header-image')
+  //   }else {
+  //     setHeaderImageClass('')
+  //   }
+  // }, [window.location.pathname]);
+
   return (
     <Router>
-      <Header setHeaderImageClass={headerImageClass} />
-      <main className={`py-3 header-image`} style={{ backgroundPositionX: "right" , backgroundSize: '900px'}}>
+      <Header  />
+      <main className={`py-3 ${headerImageClass}`} style={{ backgroundPositionX: "right" , backgroundSize: '900px'}}>
         <Container>
           <Route path="/login" component={LoginScreen} />
           <Route path="/register" component={RegisterScreen} />
@@ -24,6 +33,7 @@ const App = () => {
           <Route path="/admin/listing" component={ViewListing} exact/>
           <Route path='/admin/listing/:id/edit' component={EditListing} />
           <Route path="/" component={HomeScreen} exact />
+          <Route path="/advance-search" component={AdvanceListing} exact />
           <Route path='/page/:pageNumber' component={HomeScreen} exact />
         </Container>
       </main>

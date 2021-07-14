@@ -88,7 +88,7 @@ const HeaderSection = () => {
                   label="Vacancy Only"
                 />
               </Form.Group>
-              <Link to="/" className="px-4 py-2" id="advance-search-btn">
+              <Link to="/advance-search" className="px-4 py-2" id="advance-search-btn">
                 Advance Search
               </Link>
               <Button size="sm" variant="warning" id="search-btn">

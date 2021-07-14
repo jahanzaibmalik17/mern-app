@@ -1,0 +1,123 @@
+@import url("../../variable.css");
+.section h1 {
+    font-size: 22px;
+    line-height: 27px;
+    font-family: var(--tiempos-headline-bold);
+    text-align: left;
+    letter-spacing: 0px;
+    color: #494140;
+    margin-bottom: 30px;
+}
+
+.section, .tabs {
+    padding-top: 80px;
+}
+
+.section input.form-control, .section select.form-control {
+    border: none;
+}
+.section .form .location, .section .form .housing-type {
+    border-bottom: 1px solid rgb(0, 0, 0, 0.07);
+}
+
+.section .form  .form-label {
+    text-align: left;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: var(--aktifo-a-medium);
+    letter-spacing: 0px;
+    color: #B4B4B4;
+}
+
+.section .form .keyword .form-label {
+    text-align: left;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: var(--aktifo-a-medium);
+    letter-spacing: 0px;
+    color: rgba(73, 65, 64, 0.3);
+}
+.section .form .keyword, .section .form .housing-type {
+    margin-top: 15px;
+}
+
+form .form-control:focus{
+    box-shadow: none;
+}
+
+.housing-type-select {
+    appearance: auto !important;
+    -webkit-appearance: auto;
+    padding-left: 0px;
+}
+
+.custom-range {
+    height: calc(3.6rem + .4rem);
+}
+
+#advance-search-btn {
+    text-align: right;
+    text-decoration: underline;
+    font-size: 16px;
+    line-height: 23px;
+    font-family: var(--aktifo-a-medium);
+    letter-spacing: 0px;
+    color: #FBCB51;
+}
+
+.section #search-btn {
+    text-align: right;
+    font-size: 16px;
+    line-height: 23px;
+    font-family: var(--aktifo-a-medium);
+    letter-spacing: 0px;
+    color: #494140;
+    background: #FBCB51;
+    border-radius: 14px;
+    margin-top: 70px;
+}
+
+#custom-switch:checked~.custom-control-label::before {
+    margin-top: 20px;
+    color: #fff;
+    border-color: #FBCB51;
+    background-color: #FBCB51;
+}
+.section .custom-switch .custom-control-label {
+    text-align: left;
+    font-size: 16px;
+    line-height: 23px;
+    font-family: var(--aktifo-a-medium);
+    letter-spacing: 0px;
+    color: #494140;
+    margin-top: 20px;
+}
+input.range-slider.range-slider--warning{
+    width: 260px;
+}
+
+.grid-view .product-card.card {
+    width: 254px;
+    height: 321px;
+    border: 1px solid #49414026;
+    border-radius: 12px;
+    margin: 10px;
+}
+
+.grid-view .product-card.card .product-image{
+    width: 254px;
+    height: 136px;
+    border-radius: 12px 12px 0px 0px;
+    border: 1px solid #49414026
+}
+
+.list-view .product-card.card{
+    margin: 10px;
+}
+
+.list-view .product-card.card .product-image{
+    width: 182px;
+    height: 101px;
+    border: 1px solid #49414026;
+    border-radius: 12px 0px 0px 12px;
+}
