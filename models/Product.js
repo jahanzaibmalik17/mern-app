@@ -23,21 +23,19 @@ const productSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    // lat: {
-    //   type: Number,
-    //   required: true,
-    //   default: 0,
-    // },
-    // lan: {
-    //   type: Number,
-    //   required: true,
-    //   default: 0,
-    // },
-    // zip: {
-    //   type: Number,
-    //   required: true,
-    //   default: 0,
-    // },
+    location: {
+      type: String,
+      required: false,
+    },
+    radius: {
+      type: Number,
+      required: true,
+      default: 0,
+    },
+    keyword: {
+      type: String,
+      required: false,
+    },
     // isFavorite: {
     //   type: Boolean,
     //   required: false,

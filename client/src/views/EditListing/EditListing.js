@@ -7,6 +7,7 @@ import Message from "../../components/Message/Message";
 import Loader from "../../components/Loader/Loader";
 import { listProductDetails, updateProduct } from "../../actions/listing";
 import { PRODUCT_UPDATE_RESET } from "../../constants/productConstants";
+import './EditListing.css'
 
 const ProductEditScreen = ({ match, history }) => {
   const productId = match.params.id;
@@ -16,6 +17,9 @@ const ProductEditScreen = ({ match, history }) => {
   const [imagesArray, setImagesArray] = useState("");
   const [description, setDescription] = useState("");
   const [uploading, setUploading] = useState(false);
+  const [location, setLocation] = useState("");
+  const [radius, setRadius] = useState(0);
+  const [keyword, setKeyword] = useState("");
 
   const dispatch = useDispatch();
 
@@ -40,6 +44,9 @@ const ProductEditScreen = ({ match, history }) => {
         setHousingType(product.housingType);
         setImagesArray(product.imagesArray);
         setDescription(product.description);
+        setLocation(product.location);
+        setRadius(product.radius);
+        setKeyword(product.keyword);
       }
     }
   }, [dispatch, history, productId, product, successUpdate]);
@@ -82,6 +89,9 @@ const ProductEditScreen = ({ match, history }) => {
         housingType,
         imagesArray,
         description,
+        location,
+        radius,
+        keyword
       })
     );
   };
@@ -139,7 +149,7 @@ const ProductEditScreen = ({ match, history }) => {
                         imagesArray.map((image, key) => (
                           
                           <div className="col-sm-3" key={key}>
-                            <p>
+                            {/* <p>
                               <a
                                 data-id={image}
                                 className="btn-delete-image btn btn-outline-danger"
@@ -155,10 +165,10 @@ const ProductEditScreen = ({ match, history }) => {
                               >
                                 set main
                               </a>
-                            </p>
+                            </p> */}
                             <img
                               src={image}
-                              className="product-main-image img-fluid"
+                              className="product-edit-image img-fluid"
                             />
                           </div>
                         ))}
@@ -167,15 +177,35 @@ const ProductEditScreen = ({ match, history }) => {
                   </div>
                 </div>
 
-                {/* <Form.Group controlId="price">
-                  <Form.Label>Price</Form.Label>
+                <Form.Group controlId="location">
+                  <Form.Label>Location</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Enter location"
+                    value={location}
+                    onChange={(e) => setLocation(e.target.value)}
+                  ></Form.Control>
+                </Form.Group>
+
+                <Form.Group controlId="radius">
+                  <Form.Label>Radius</Form.Label>
                   <Form.Control
                     type="number"
-                    placeholder="Enter price"
-                    value={price}
-                    onChange={(e) => setPrice(e.target.value)}
+                    placeholder="Enter Radius"
+                    value={radius}
+                    onChange={(e) => setRadius(e.target.value)}
                   ></Form.Control>
-                </Form.Group> */}
+                </Form.Group>
+
+                <Form.Group controlId="keyword">
+                  <Form.Label>Keyword</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Enter Keyword"
+                    value={keyword}
+                    onChange={(e) => setKeyword(e.target.value)}
+                  ></Form.Control>
+                </Form.Group>
 
                 {/* <Form.Group controlId="image">
                   <Form.Label>Image</Form.Label>

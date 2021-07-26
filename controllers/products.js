@@ -8,12 +8,12 @@ module.exports.add = async (req, res) => {
       housingType: req.body.product.housingType,
       imagesArray: req.body.product.imagesArray,
       description: req.body.product.description,
-      location: req.body.location,
-      radius: req.body.radius,
-      keyword: req.body.keyword,
-      phone: req.body.phone,
-      email: req.body.email,
-      website: req.body.website,
+      // location: req.body.location,
+      // radius: req.body.radius,
+      // keyword: req.body.keyword,
+      // phone: req.body.phone,
+      // email: req.body.email,
+      // website: req.body.website,
     });
     const createdProduct = await product.save();
     res.status(201).json(createdProduct);
@@ -47,7 +47,7 @@ module.exports.getOne = async (req, res) => {
 
 module.exports.update = async (req, res) => {
   try {
-    const { name, housingType, description, imagesArray } = req.body;
+    const { name, housingType, description, imagesArray, location, radius, keyword } = req.body;
 
     const product = await Product.findById(req.params.id);
 
@@ -59,9 +59,9 @@ module.exports.update = async (req, res) => {
       product.location = location;
       product.radius = radius;
       product.keyword = keyword;
-      product.phone = phone;
-      product.email = email;
-      product.website = website;
+      // product.phone = phone;
+      // product.email = email;
+      // product.website = website;
       const updatedProduct = await product.save();
       res.json(updatedProduct);
     }
