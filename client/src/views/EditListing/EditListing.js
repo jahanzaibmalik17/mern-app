@@ -20,6 +20,7 @@ const ProductEditScreen = ({ match, history }) => {
   const [location, setLocation] = useState("");
   const [radius, setRadius] = useState(0);
   const [keyword, setKeyword] = useState("");
+  const [vacant, setVacant] = useState(true);
 
   const dispatch = useDispatch();
 
@@ -47,6 +48,7 @@ const ProductEditScreen = ({ match, history }) => {
         setLocation(product.location);
         setRadius(product.radius);
         setKeyword(product.keyword);
+        setVacant(product.vacant);
       }
     }
   }, [dispatch, history, productId, product, successUpdate]);
@@ -91,7 +93,8 @@ const ProductEditScreen = ({ match, history }) => {
         description,
         location,
         radius,
-        keyword
+        keyword,
+        vacant
       })
     );
   };
@@ -207,6 +210,25 @@ const ProductEditScreen = ({ match, history }) => {
                   ></Form.Control>
                 </Form.Group>
 
+                <Form.Group controlId="description">
+                  <Form.Label>Description</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Enter description"
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                  ></Form.Control>
+                </Form.Group>
+
+                <Form.Group controlId="vacant">
+                  <Form.Label>Vacant</Form.Label>
+                  <Form.Control
+                    type="checkbox"
+                    checked={vacant}
+                    onChange={(e) => setVacant(e.target.checked)}
+                  ></Form.Control>
+                </Form.Group>
+
                 {/* <Form.Group controlId="image">
                   <Form.Label>Image</Form.Label>
                   <Form.Control
@@ -253,16 +275,6 @@ const ProductEditScreen = ({ match, history }) => {
                     onChange={(e) => setCategory(e.target.value)}
                   ></Form.Control>
                 </Form.Group> */}
-
-                <Form.Group controlId="description">
-                  <Form.Label>Description</Form.Label>
-                  <Form.Control
-                    type="text"
-                    placeholder="Enter description"
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                  ></Form.Control>
-                </Form.Group>
 
                 <Button type="submit" variant="primary">
                   Update

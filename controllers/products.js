@@ -47,7 +47,7 @@ module.exports.getOne = async (req, res) => {
 
 module.exports.update = async (req, res) => {
   try {
-    const { name, housingType, description, imagesArray, location, radius, keyword } = req.body;
+    const { name, housingType, description, imagesArray, location, radius, keyword, vacant } = req.body;
 
     const product = await Product.findById(req.params.id);
 
@@ -59,6 +59,7 @@ module.exports.update = async (req, res) => {
       product.location = location;
       product.radius = radius;
       product.keyword = keyword;
+      product.vacant = vacant;
       // product.phone = phone;
       // product.email = email;
       // product.website = website;
