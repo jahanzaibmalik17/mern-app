@@ -1,0 +1,32 @@
+.list-detail .card {
+    padding: 10px 20px;
+}
+
+.list-detail h1 {
+    text-align: left;
+    font-size: 21px;
+    font-family: var(--aktifo-a-medium);
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: 0px;
+    color: #494140;
+}
+
+.list-detail .card-title {
+    text-align: left;
+    font: normal normal medium 14px/20px Aktifo-A;
+    font-size: 14px;
+    font-family: var(--aktifo-a-medium);
+    line-height: 20px;
+    letter-spacing: 0px;
+    color: #C1C1C1;
+    padding-top: 20px
+}
+.list-detail .card-text {
+    text-align: left;
+    font-size: 16px;
+    font-family: var(--aktifo-a-medium);
+    line-height: 26px;
+    letter-spacing: 0px;
+    color: #494140;
+}

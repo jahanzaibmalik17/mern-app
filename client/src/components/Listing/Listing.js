@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Row, Card, Col, Image, Container } from "react-bootstrap";
 import "./Listing.css";
-import Paginate from '../../components/Paginate/Paginate';
 const Listing = ({ products, pages, page }) => {
   return (
     <Container fluid>
@@ -13,11 +12,12 @@ const Listing = ({ products, pages, page }) => {
           your horse.
         </p>
         <Row>
+
           {products &&
             products.map((product) => (
               <Col key={product._id} lg={3} md={6} sm={12} xs={12}>
                 <Card className="product-card">
-                  <Link to="/">
+                  <Link to={`/listing/${product._id}`}>
                     <Image
                       className="product-image"
                       src={product.imagesArray[0]}
@@ -47,9 +47,7 @@ const Listing = ({ products, pages, page }) => {
               </Col>
             ))}
         </Row>
-        <Col className="text-center pagination-wrapper">
-          <Paginate pages={pages} page={page} />
-        </Col>
+   
       </Col>
     </Container>
   );

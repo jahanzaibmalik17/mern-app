@@ -110,7 +110,10 @@ const HeaderSection = ({ history, match }) => {
             defaultActiveKey="list"
             id="uncontrolled-tab-example"
             className="mb-3"
-            lg={3} md={3} sm={6} sx={6}
+            lg={3}
+            md={3}
+            sm={6}
+            sx={6}
           >
             <Tab
               eventKey="list"

@@ -1,22 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Col, Row, Form, Button, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./HeaderSection.css";
-import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
-import RangeSlider from 'react-bootstrap-range-slider';
+import "react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css";
+import RangeSlider from "react-bootstrap-range-slider";
 const HeaderSection = () => {
-  const [ value, setValue ] = useState(0); 
+  const [value, setValue] = useState(0);
   return (
     <React.Fragment>
       <Row className="header-section">
         <Col lg={8}>
           <Col className="header-image">
-              {/* <Image src={headerImage}  /> */}
+            {/* <Image src={headerImage}  /> */}
           </Col>
           <Row>
             {" "}
             <Col lg={6}>
-              <h1>find your horse a better / more Natural living.</h1>
+              <h1>
+                find your horse a better{" "}
+                <span style={{ color: "#FBCB51" }}>/</span> more Natural living.
+              </h1>
               <p>
                 Our unique algorithm helps you find the best natural environment
                 for your horse.
@@ -64,16 +67,18 @@ const HeaderSection = () => {
               </Col>
               <Col lg={8}>
                 <Form.Group as={Col} controlId="formBasicRangeCustom">
-                <Form.Label>Radius</Form.Label>
-                <RangeSlider
-                  value={value}
-                  onChange={changeEvent => setValue(changeEvent.target.value)}
-                  tooltipPlacement = 'top'
-                  variant = 'warning'
-                  // inputProps = {
-                  //   background: ''
-                  // }
-                />
+                  <Form.Label>Radius</Form.Label>
+                  <RangeSlider
+                    value={value}
+                    onChange={(changeEvent) =>
+                      setValue(changeEvent.target.value)
+                    }
+                    tooltipPlacement="top"
+                    variant="warning"
+                    // inputProps = {
+                    //   background: ''
+                    // }
+                  />
                   {/* <Form.Label>Radius</Form.Label>
                   <Form.Control type="range" custom  value={value} onChange={changeEvent => setValue(changeEvent.target.value)}/> */}
                 </Form.Group>
@@ -88,7 +93,11 @@ const HeaderSection = () => {
                   label="Vacancy Only"
                 />
               </Form.Group>
-              <Link to="/advance-search" className="px-4 py-2" id="advance-search-btn">
+              <Link
+                to="/advance-search"
+                className="px-4 py-2"
+                id="advance-search-btn"
+              >
                 Advance Search
               </Link>
               <Button size="sm" variant="warning" id="search-btn">

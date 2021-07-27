@@ -3,26 +3,42 @@ import { useDispatch, useSelector } from "react-redux";
 import HeaderSection from "../../components/HeaderSection/HeaderSection";
 import FeaturedListing from "../../components/Featured/FeaturedListing";
 import Listing from "../../components/Listing/Listing";
-import { listProducts } from "../../actions/listing";
-
+import axios from "axios";
+import './Home.css'
 const HomeScreen = ({ match }) => {
-  const keyword = match.params.keyword;
-  const pageNumber = match.params.pageNumber || 1;
+  const [products, setProducts] = useState([]);
+  const [page, setPage] = useState(1);
   const dispatch = useDispatch();
 
-  const productList = useSelector((state) => state.productList);
-
-  const { loading, error, products, page, pages } = productList;
-
   useEffect(() => {
-    dispatch(listProducts(keyword, pageNumber));
-  }, [dispatch, keyword, pageNumber]);
+    const loadProducts = async () => {
+      try {
+        const response = await axios.get(`/api/product?pageNumber=${page}`);
+        setProducts([...products, ...response.data.products]);
+      } catch (error) {
+        throw Error("Error while loading data. Try again later.");
+      }
+    };
+
+    loadProducts();
+  }, [dispatch, page]);
+
+
+  const loadMore = () => {
+    setPage((page) => page + 1);
+  };
 
   return (
     <React.Fragment>
       <HeaderSection />
       <FeaturedListing products={products} />
-      <Listing products={products} page={page} pages={pages} />
+      <Listing products={products} />
+         <div className="text-center pagination-wrapper">
+          <button onClick={loadMore} className="btn-grad" id="load-more-btn">
+          Load More
+        </button>
+        </div>
+ 
     </React.Fragment>
   );
 };

@@ -4,6 +4,8 @@ import { LinkContainer } from "react-router-bootstrap";
 import { Navbar, Nav, Container, NavDropdown, Row } from "react-bootstrap";
 import { logout } from "../../actions/user";
 import "./Header.css";
+import signInImage from '../../images/Group-4675.png';
+import signUpImage from '../../images/Group-4677.png'
 
 
 const Header = (params) => {
@@ -41,14 +43,14 @@ const Header = (params) => {
               ) : (
                 <React.Fragment>
                   <LinkContainer to="/register">
-                    <Nav.Link>
-                      <i className="fas fa-plus"></i> Create Account
+                    <Nav.Link className="header-nav-link">
+                    <img src={signUpImage} alt=""/> Create Account
                     </Nav.Link>
                   </LinkContainer>
 
                   <LinkContainer to="/login">
-                    <Nav.Link>
-                      <i className="fas fa-user"></i> Sign In
+                    <Nav.Link className="header-nav-link">
+                      <img src={signInImage} alt=""/> Sign In
                     </Nav.Link>
                   </LinkContainer>
                 </React.Fragment>

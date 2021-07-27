@@ -3,14 +3,28 @@
     content: url('../../images/Component\ 1\ –\ 66.svg');
 }
 .listing-btn {
-    padding: 10px !important;
+    margin-left: 10px !important;
     margin-bottom: 10px;
     text-align: left;
     font-size: 16px;
     line-height: 23px;
     font-family: var(--aktifo-a-medium);
     letter-spacing: 0px;
-    color: #494140;
+    color: #494140 !important;
     background: #FBCB51;
     border-radius: 14px;
+}
+a.header-nav-link.nav-link {
+    text-align: right;
+    font-size: 15px;
+    line-height: 21px;
+    font-family: var(--aktifo-a-medium);
+    letter-spacing: 0px;
+    color: #494140 !important;
+    margin-bottom: 10px;
+}
+
+.navbar-expand-sm .navbar-nav .nav-link {
+    padding-right: 0.8rem !important;
+    padding-left: 0.8rem !important;
 }

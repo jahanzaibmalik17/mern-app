@@ -17,7 +17,7 @@ const Property = ({ products }) => {
             products.map((product) => (
               <Col key={product._id} lg={3} md={6} sm={12} xs={12}>
                 <Card className="product-card">
-                  <Link to="/">
+                  <Link to={`/listing/${product._id}`}>
                     <Image
                       className="product-image"
                       src={product.imagesArray[0]}

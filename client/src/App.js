@@ -10,6 +10,7 @@ import AddListing  from "./views/AddListing/AddListing";
 import ViewListing  from "./views/ViewListing/ViewListing";
 import EditListing  from "./views/EditListing/EditListing";
 import AdvanceListing  from "./views/AdvanceListing/AdvanceListing";
+import ListingDetail  from "./views/ListingDetail/ListingDetail";
 
 const App = () => {
   const [headerImageClass, setHeaderImageClass] = useState('');
@@ -33,6 +34,7 @@ const App = () => {
           <Route path="/admin/listing" component={ViewListing} exact/>
           <Route path='/admin/listing/:id/edit' component={EditListing} />
           <Route path="/" component={HomeScreen} exact />
+          <Route path='/listing/:id' component={ListingDetail} />
           <Route path="/advance-search" component={AdvanceListing} exact />
           <Route path='/page/:pageNumber' component={HomeScreen} exact />
         </Container>
