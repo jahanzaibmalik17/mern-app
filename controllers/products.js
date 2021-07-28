@@ -85,3 +85,16 @@ module.exports.delete = async (req, res) => {
     console.log("controller:products:delete", error);
   }
 };
+
+module.exports.toggleStatus = async (req, res) => {
+  try {
+    const product = await Product.findById(req.params.id);
+    if (product) {
+      product.isActive = !product.isActive;
+      const updatedProduct = await product.save();
+      res.json(updatedProduct);
+    }
+  } catch (error) {
+    console.log("controller:products:toggleStatus", error);
+  }
+};

@@ -221,12 +221,7 @@ const ProductEditScreen = ({ match, history }) => {
                 </Form.Group>
 
                 <Form.Group controlId="vacant">
-                  <Form.Label>Vacant</Form.Label>
-                  <Form.Control
-                    type="checkbox"
-                    checked={vacant}
-                    onChange={(e) => setVacant(e.target.checked)}
-                  ></Form.Control>
+                  <Form.Check type="checkbox" label="Vacant" checked={vacant}  onChange={(e) => setVacant(e.target.checked)}/>
                 </Form.Group>
 
                 {/* <Form.Group controlId="image">

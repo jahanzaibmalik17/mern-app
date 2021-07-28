@@ -21,6 +21,9 @@ import {
   PRODUCT_TOP_REQUEST,
   PRODUCT_TOP_SUCCESS,
   PRODUCT_TOP_FAIL,
+  PRODUCT_TOGGLE_REQUEST,
+  PRODUCT_TOGGLE_SUCCESS,
+  PRODUCT_TOGGLE_FAIL,
 } from '../constants/productConstants'
 import { logout } from '../actions/user'
 
@@ -243,6 +246,42 @@ export const listTopProducts = () => async (dispatch) => {
         error.response && error.response.data.message
           ? error.response.data.message
           : error.message,
+    })
+  }
+}
+
+export const toggleProduct = (id) => async (dispatch, getState) => {
+  try {
+    dispatch({
+      type: PRODUCT_TOGGLE_REQUEST,
+    })
+
+    const {
+      userLogin: { userInfo },
+    } = getState()
+
+    const config = {
+      headers: {
+        Authorization: `Bearer ${userInfo.token}`,
+      },
+    }
+
+    await axios.put(`/api/product/${id}/toggle-status`, config)
+
+    dispatch({
+      type: PRODUCT_TOGGLE_SUCCESS,
+    })
+  } catch (error) {
+    const message =
+      error.response && error.response.data.message
+        ? error.response.data.message
+        : error.message
+    if (message === 'Not authorized, token failed') {
+      dispatch(logout())
+    }
+    dispatch({
+      type: PRODUCT_TOGGLE_FAIL,
+      payload: message,
     })
   }
 }

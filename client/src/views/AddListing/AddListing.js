@@ -15,6 +15,10 @@ const AddListingScreen = ({ match, history }) => {
   const [imagesArray, setImagesArray] = useState("");
   const [description, setDescription] = useState("");
   const [uploading, setUploading] = useState(false);
+   const [location, setLocation] = useState("");
+  const [radius, setRadius] = useState(0);
+  const [keyword, setKeyword] = useState("");
+  const [vacant, setVacant] = useState(true);
 
   const dispatch = useDispatch();
 
@@ -81,6 +85,10 @@ const AddListingScreen = ({ match, history }) => {
         housingType,
         imagesArray,
         description,
+        location,
+        radius,
+        keyword,
+        vacant
       })
     );
   };
@@ -130,6 +138,36 @@ const AddListingScreen = ({ match, history }) => {
                   ></Form.File>
                 </Form.Group>
 
+                <Form.Group controlId="location">
+                  <Form.Label>Location</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Enter location"
+                    value={location}
+                    onChange={(e) => setLocation(e.target.value)}
+                  ></Form.Control>
+                </Form.Group>
+
+                <Form.Group controlId="radius">
+                  <Form.Label>Radius</Form.Label>
+                  <Form.Control
+                    type="number"
+                    placeholder="Enter Radius"
+                    value={radius}
+                    onChange={(e) => setRadius(e.target.value)}
+                  ></Form.Control>
+                </Form.Group>
+
+                <Form.Group controlId="keyword">
+                  <Form.Label>Keyword</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Enter Keyword"
+                    value={keyword}
+                    onChange={(e) => setKeyword(e.target.value)}
+                  ></Form.Control>
+                </Form.Group>
+
                 <Form.Group controlId="description">
                   <Form.Label>Description</Form.Label>
                   <Form.Control
@@ -139,6 +177,10 @@ const AddListingScreen = ({ match, history }) => {
                     onChange={(e) => setDescription(e.target.value)}
                   ></Form.Control>
                 </Form.Group>
+
+                 <Form.Group controlId="vacant">
+                  <Form.Check type="checkbox" label="Vacant" checked={vacant}  onChange={(e) => setVacant(e.target.checked)}/>
+                </Form.Group> 
 
                 <Button type="submit" size="lg" id="add-listing-btn">
                   Add

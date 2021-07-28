@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Message from "../../components/Message/Message";
 import Loader from "../../components/Loader/Loader";
 // import Paginate from '../components/Paginate'
-import { listProducts, deleteProduct } from "../../actions/listing";
+import { listProducts, deleteProduct, toggleProduct } from "../../actions/listing";
 import './ViewListing.css'
 
 const ProductListScreen = ({ history, match }) => {
@@ -37,6 +37,10 @@ const ProductListScreen = ({ history, match }) => {
     if (window.confirm("Are you sure")) {
       dispatch(deleteProduct(id));
     }
+  };
+
+   const toggleHandler = (id) => {
+      dispatch(toggleProduct(id));
   };
 
   const createProductHandler = () => {
@@ -97,17 +101,24 @@ const ProductListScreen = ({ history, match }) => {
                     </LinkContainer>
                     <Button
                       variant="danger"
-                      className="btn-sm"
+                      className="btn-sm ml-2"
                       onClick={() => deleteHandler(product._id)}
                     >
                       <i className="fas fa-trash"></i>
+                    </Button>
+
+                      <Button
+                      variant= { product && product.isActive ? 'warning': 'success'}
+                      className="btn-sm ml-2"
+                      onClick={() => toggleHandler(product._id)}
+                    >
+                      <i className="fas fa-toggle-off"></i>
                     </Button>
                   </td>
                 </tr>
               ))}
             </tbody>
           </Table>
-          {/* <Paginate pages={pages} page={page} isAdmin={true} /> */}
         </>
       )}
     </>

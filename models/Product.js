@@ -41,6 +41,10 @@ const productSchema = mongoose.Schema(
     //   required: false,
     //   default: false,
     // },
+    isActive: {
+      type: Boolean,
+      default: true,
+    },
     vacant: {
       type: Boolean,
       default: true,
