@@ -30,7 +30,7 @@ const ProductListScreen = ({ history, match }) => {
     // if (!userInfo || !userInfo.isAdmin) {
     //   history.push('/login')
     // }
-    dispatch(listProducts("", pageNumber));
+    dispatch(listProducts("", "", "", pageNumber));
   }, [dispatch, history, userInfo, successDelete, pageNumber]);
 
   const deleteHandler = (id) => {
@@ -73,8 +73,8 @@ const ProductListScreen = ({ history, match }) => {
                 <th></th>
                 <th>Id</th>
                 <th>Name</th>
-                <th>Housing Type</th>
-                <th>Description</th>
+                <th>Make</th>
+                <th>Model</th>
                 <th></th>
               </tr>
             </thead>
@@ -91,8 +91,8 @@ const ProductListScreen = ({ history, match }) => {
                   </td>
                   <td>{product._id}</td>
                   <td>{product.name}</td>
-                  <td>{product.housingType}</td>
-                  <td>{product.description}</td>
+                  <td>{product.make}</td>
+                  <td>{product.model}</td>
                   <td>
                     <LinkContainer to={`/admin/listing/${product._id}/edit`}>
                       <Button variant="light" className="btn-sm">

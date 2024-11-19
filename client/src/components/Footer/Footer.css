@@ -1,7 +1,7 @@
 @import url("../../variable.css");
-/* .navbar-footer {
-    content: url('../../images/download0000.jfif');
-} */
+.navbar-footer {
+    content: url('../../images/footer.jfif');
+}
 .nav-footer-2 {
     bottom: 40px;
 }

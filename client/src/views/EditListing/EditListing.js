@@ -225,53 +225,6 @@ const ProductEditScreen = ({ match, history }) => {
                   <Form.Check type="checkbox" label="shippingStatus" checked={shippingStatus}  onChange={(e) => setShippingStatus(e.target.checked)}/>
                 </Form.Group>
 
-                {/* <Form.Group controlId="image">
-                  <Form.Label>Image</Form.Label>
-                  <Form.Control
-                    type="text"
-                    placeholder="Enter image url"
-                    value={image}
-                    onChange={(e) => setImage(e.target.value)}
-                  ></Form.Control>
-                  <Form.File
-                    id="image-file"
-                    label="Choose File"
-                    custom
-                    onChange={uploadFileHandler}
-                  ></Form.File>
-                  {uploading && <Loader />}
-                </Form.Group> */}
-
-                {/* <Form.Group controlId="brand">
-                  <Form.Label>Brand</Form.Label>
-                  <Form.Control
-                    type="text"
-                    placeholder="Enter brand"
-                    value={brand}
-                    onChange={(e) => setBrand(e.target.value)}
-                  ></Form.Control>
-                </Form.Group>
-
-                <Form.Group controlId="countInStock">
-                  <Form.Label>Count In Stock</Form.Label>
-                  <Form.Control
-                    type="number"
-                    placeholder="Enter countInStock"
-                    value={countInStock}
-                    onChange={(e) => setCountInStock(e.target.value)}
-                  ></Form.Control>
-                </Form.Group>
-
-                <Form.Group controlId="category">
-                  <Form.Label>Category</Form.Label>
-                  <Form.Control
-                    type="text"
-                    placeholder="Enter category"
-                    value={category}
-                    onChange={(e) => setCategory(e.target.value)}
-                  ></Form.Control>
-                </Form.Group> */}
-
                 <Button type="submit" variant="primary">
                   Update
                 </Button>
