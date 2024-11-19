@@ -18,7 +18,9 @@ import { listProducts } from "../../actions/listing";
 import "./AdvanceListing.css";
 const HeaderSection = ({ history, match }) => {
   const pageNumber = match.params.pageNumber || 1;
-  const [value, setValue] = useState(0);
+  const [make, setMake] = useState("");
+  const [year, setYear] = useState("");
+  const [model, setModel] = useState("");
 
   const dispatch = useDispatch();
 
@@ -26,73 +28,54 @@ const HeaderSection = ({ history, match }) => {
   const { loading, error, products, page, pages } = productList;
 
   useEffect(() => {
-    dispatch(listProducts("", pageNumber));
+    dispatch(listProducts(make, model, year, pageNumber));
   }, [dispatch, history, pageNumber]);
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    dispatch(listProducts(make, model, year, pageNumber));
+  };
+  
 
   return (
     <Container>
       <Row>
         <Col lg={3} className="section">
-          <Form className="form">
+          <Form className="form" onSubmit={submitHandler}>
             <h1>Refine search results</h1>
-            <Form.Row className="location">
-              <Form.Group className="" as={Col} controlId="formGridEmail">
-                <Form.Label>Location</Form.Label>
-                <Form.Control type="text" placeholder="" />
-              </Form.Group>
-            </Form.Row>
 
-            <Form.Row className="housing-type">
-              <Form.Group controlId="formGridState">
-                <Form.Label>Type of housing</Form.Label>
-                <Form.Control
-                  as="select"
-                  defaultValue=""
-                  className="housing-type-select"
-                >
-                  <option>Select Type</option>
-                  <option>Stable</option>
-                  <option>Meadow</option>
-                  <option>Paddock Paradise</option>
-                </Form.Control>
-              </Form.Group>
-            </Form.Row>
+            <Form.Group controlId="model">
+              <Form.Label>Make</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter Model"
+                value={make}
+                onChange={(e) => setMake(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
 
-            <Form.Row className="keyword">
-              <Form.Group
-                className="keyword-col"
-                as={Col}
-                controlId="formGridAddress1"
-              >
-                <Form.Label>Keyword</Form.Label>
-                <Form.Control placeholder="" />
-              </Form.Group>
-            </Form.Row>
+            <Form.Group controlId="model">
+              <Form.Label>Model</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter Model"
+                value={model}
+                onChange={(e) => setModel(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
 
-            <Form.Row className="">
-              <Form.Group controlId="formBasicRangeCustom">
-                <Form.Label>Radius</Form.Label>
-                <RangeSlider
-                  value={value}
-                  onChange={(changeEvent) => setValue(changeEvent.target.value)}
-                  tooltipPlacement="top"
-                  variant="warning"
-                />
-              </Form.Group>
-            </Form.Row>
+            <Form.Group controlId="year">
+              <Form.Label>Year</Form.Label>
+              <Form.Control
+                type="number"
+                placeholder="Enter Year"
+                value={year}
+                onChange={(e) => setYear(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
 
             <Form.Row>
-              <Form.Group controlId="formGridAddress1">
-                <Form.Check
-                  type="switch"
-                  id="custom-switch"
-                  label="Vacancy Only"
-                />
-              </Form.Group>
-            </Form.Row>
-
-            <Form.Row>
-              <Button size="sm" variant="warning" id="search-btn">
+              <Button size="sm" variant="warning" id="search-btn" type="submit">
                 Search
               </Button>
             </Form.Row>
@@ -100,11 +83,11 @@ const HeaderSection = ({ history, match }) => {
         </Col>
 
         <Col lg={9} className="tabs">
-          <Row lg={3} md={3} sm={6} xs={6}>
+          {/* <Row lg={3} md={3} sm={6} xs={6}>
             Search Results{" "}
             <span className="font-weight-bold">“Netherlands”</span> 34 listings
             found.
-          </Row>
+          </Row> */}
 
           <Tabs
             defaultActiveKey="list"

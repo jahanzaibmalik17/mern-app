@@ -57,12 +57,6 @@ const Header = (params) => {
               )}
             </Nav>
             <Nav className="ml-auto pt-0">
-              <LinkContainer to="">
-                <Nav.Link className="">Explore Featured</Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="">
-                <Nav.Link>Special Offers</Nav.Link>
-              </LinkContainer>
               <LinkContainer to="/admin/addlisting">
                 <Nav.Link className="listing-btn">Post a Listing</Nav.Link>
               </LinkContainer>

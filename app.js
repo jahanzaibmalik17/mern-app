@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const path = require('path');
 // DB Connection
 mongoose
-  .connect('mongodb://localhost/horse-housing', { useNewUrlParser: true , useUnifiedTopology: true, useCreateIndex: true,})
+  .connect('mongodb://127.0.0.1/carsDB', { useNewUrlParser: true , useUnifiedTopology: true, useCreateIndex: true,})
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.log(err.message));
 

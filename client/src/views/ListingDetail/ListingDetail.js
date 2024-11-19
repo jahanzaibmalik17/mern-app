@@ -24,40 +24,18 @@ const ListingDetail = ({ history, match }) => {
 
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
-  console.log("product", product);
 
   useEffect(() => {
     if (!product._id || product._id !== productId) {
       dispatch(listProductDetails(productId));
     } else {
-      console.log("imagesArray", product.imagesArray);
       setImagesArray(product.imagesArray);
     }
   }, [dispatch, productId]);
 
-  //   let images = imagesArray &&
-  //   imagesArray.map((image, key) => ({
-  //     original: image,
-  //     thumbnail: image,
-  //   }));
-  // const images = [
-  //     {
-  //       original: 'https://picsum.photos/id/1018/1000/600/',
-  //       thumbnail: 'https://picsum.photos/id/1018/250/150/',
-  //     },
-  //     {
-  //       original: 'https://picsum.photos/id/1015/1000/600/',
-  //       thumbnail: 'https://picsum.photos/id/1015/250/150/',
-  //     },
-  //     {
-  //       original: 'https://picsum.photos/id/1019/1000/600/',
-  //       thumbnail: 'https://picsum.photos/id/1019/250/150/',
-  //     },
-  //   ];
 
   return (
     <>
-      {/* <ImageGallery items={images} />; */}
       <Container className="list-detail">
         <Row>
           <Col lg={8} md={8} sm={12} xs={12}>

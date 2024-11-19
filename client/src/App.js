@@ -33,7 +33,7 @@ const App = () => {
           <Route path="/admin/addlisting" component={AddListing} />
           <Route path="/admin/listing" component={ViewListing} exact/>
           <Route path='/admin/listing/:id/edit' component={EditListing} />
-          <Route path="/" component={HomeScreen} exact />
+          <Route path="/" component={AdvanceListing} exact />
           <Route path='/listing/:id' component={ListingDetail} />
           <Route path="/advance-search" component={AdvanceListing} exact />
           <Route path='/page/:pageNumber' component={HomeScreen} exact />

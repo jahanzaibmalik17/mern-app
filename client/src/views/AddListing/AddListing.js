@@ -11,14 +11,14 @@ import "./AddListing.css";
 
 const AddListingScreen = ({ match, history }) => {
   const [name, setName] = useState("");
-  const [housingType, setHousingType] = useState("stable");
+  const [make, setMake] = useState("honda");
   const [imagesArray, setImagesArray] = useState("");
-  const [description, setDescription] = useState("");
+  const [year, setYear] = useState("");
   const [uploading, setUploading] = useState(false);
-   const [location, setLocation] = useState("");
-  const [radius, setRadius] = useState(0);
+   const [model, setModel] = useState("");
+  const [vin, setVin] = useState(0);
   const [keyword, setKeyword] = useState("");
-  const [vacant, setVacant] = useState(true);
+  const [shippingStatus, setShippingStatus] = useState(true);
 
   const dispatch = useDispatch();
 
@@ -37,20 +37,10 @@ const AddListingScreen = ({ match, history }) => {
     product: createdProduct,
   } = productCreate;
 
-  // useEffect(() => {
-  //   if (successCreate) {
-  //     dispatch({ type: PRODUCT_CREATE_RESET });
-  //     history.push("/");
-  //   } else {
-  //     setName(product.name);
-  //     setHousingType(product.housingType || 'stable');
-  //     setImagesArray(product.imagesArray);
-  //     setDescription(product.description);
-  //   }
-  // }, [dispatch, history, product, successCreate, createdProduct]);
 
-  const handleHousingType = (e) => {
-    setHousingType(e.target.value);
+
+  const handleMake = (e) => {
+    setMake(e.target.value);
   };
 
   const uploadFileHandler = async (e) => {
@@ -82,13 +72,13 @@ const AddListingScreen = ({ match, history }) => {
     dispatch(
       createProduct({
         name,
-        housingType,
+        make,
         imagesArray,
-        description,
-        location,
-        radius,
+        model,
+        year,
+        vin,
         keyword,
-        vacant
+        shippingStatus
       })
     );
   };
@@ -117,13 +107,13 @@ const AddListingScreen = ({ match, history }) => {
                   ></Form.Control>
                 </Form.Group>
 
-                <Form.Group controlId="housingType">
-                  <Form.Label>Type of housing</Form.Label>
-                  <Form.Control onChange={handleHousingType} as="select">
+                <Form.Group controlId="make">
+                  <Form.Label>Type of Car</Form.Label>
+                  <Form.Control onChange={handleMake} as="select">
                     {/* <option></option> */}
-                    <option value="stable">Stable</option>
-                    <option value="meadow">Meadow</option>
-                    <option value="paddockParadise">Paddock Paradise</option>
+                    <option value="honda">Honda</option>
+                    <option value="suzuki">Suzuki</option>
+                    <option value="toyota">Toyota</option>
                   </Form.Control>
                 </Form.Group>
 
@@ -138,23 +128,23 @@ const AddListingScreen = ({ match, history }) => {
                   ></Form.File>
                 </Form.Group>
 
-                <Form.Group controlId="location">
-                  <Form.Label>Location</Form.Label>
+                <Form.Group controlId="model">
+                  <Form.Label>Model</Form.Label>
                   <Form.Control
                     type="text"
-                    placeholder="Enter location"
-                    value={location}
-                    onChange={(e) => setLocation(e.target.value)}
+                    placeholder="Enter Model"
+                    value={model}
+                    onChange={(e) => setModel(e.target.value)}
                   ></Form.Control>
                 </Form.Group>
 
-                <Form.Group controlId="radius">
-                  <Form.Label>Radius</Form.Label>
+                <Form.Group controlId="year">
+                  <Form.Label>Year</Form.Label>
                   <Form.Control
                     type="number"
-                    placeholder="Enter Radius"
-                    value={radius}
-                    onChange={(e) => setRadius(e.target.value)}
+                    placeholder="Enter Year"
+                    value={year}
+                    onChange={(e) => setYear(e.target.value)}
                   ></Form.Control>
                 </Form.Group>
 
@@ -168,18 +158,18 @@ const AddListingScreen = ({ match, history }) => {
                   ></Form.Control>
                 </Form.Group>
 
-                <Form.Group controlId="description">
-                  <Form.Label>Description</Form.Label>
+                <Form.Group controlId="vin">
+                  <Form.Label>VIN</Form.Label>
                   <Form.Control
                     type="text"
-                    placeholder="Enter description"
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
+                    placeholder="Enter VIN"
+                    value={vin}
+                    onChange={(e) => setVin(e.target.value)}
                   ></Form.Control>
                 </Form.Group>
 
-                 <Form.Group controlId="vacant">
-                  <Form.Check type="checkbox" label="Vacant" checked={vacant}  onChange={(e) => setVacant(e.target.checked)}/>
+                 <Form.Group controlId="shipping_status">
+                  <Form.Check type="checkbox" label="shippingStatus" checked={shippingStatus}  onChange={(e) => setShippingStatus(e.target.checked)}/>
                 </Form.Group> 
 
                 <Button type="submit" size="lg" id="add-listing-btn">

@@ -30,12 +30,12 @@ const Listing = ({ products, pages, page }) => {
                       {product.name}
                     </Card.Title>
                     <Card.Text as="div" className="card-description">
-                      {product.description}
+                      {product.make}
                     </Card.Text>
                   </Card.Body>
                   <Card.Body>
                     <Card.Text as="div" className="card-type">
-                      {product.housingType}
+                      {product.model}
                       <i
                         className="far fa-heart"
                         style={{ float: "right" }}

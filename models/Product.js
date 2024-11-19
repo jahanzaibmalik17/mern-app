@@ -15,22 +15,26 @@ const productSchema = mongoose.Schema(
       type: Array,
       required: true,
     },
-    housingType: {
+    make: {
       type: String,
       required: true,
     },
-    description: {
+    model: {
       type: String,
       required: true,
     },
-    location: {
+    year: {
       type: String,
       required: false,
     },
-    radius: {
+    vin: {
       type: Number,
       required: true,
       default: 0,
+    },
+    shipping_status: {
+      type: Boolean,
+      default: true,
     },
     keyword: {
       type: String,
@@ -42,10 +46,6 @@ const productSchema = mongoose.Schema(
     //   default: false,
     // },
     isActive: {
-      type: Boolean,
-      default: true,
-    },
-    vacant: {
       type: Boolean,
       default: true,
     },

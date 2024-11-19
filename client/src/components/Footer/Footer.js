@@ -41,7 +41,7 @@ const HeaderSection = () => {
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text>
-              © 2021, MijinPaardZoekt Inc. All rights reserved.
+              © 2024, Inc. All rights reserved.
             </Navbar.Text>
           </Navbar.Collapse>
         </Container>
