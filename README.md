@@ -1,4 +1,4 @@
-# MijnPaard-Zoekt
+# MERN App Cars
 
 #install backend node-modules
 yarn
